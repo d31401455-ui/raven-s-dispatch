@@ -26,7 +26,7 @@ const PLATES = {
 
 const PLATE_SCALE = 0.86;
 const PLATE_X = (CANVAS_W - 1024 * PLATE_SCALE) / 2;
-const PLATE_Y = (CANVAS_H - 1024 * PLATE_SCALE) / 2 - 30;
+const PLATE_Y = (CANVAS_H - 1024 * PLATE_SCALE) / 2 + 45;
 const P = (x: number, y: number) => ({ x: PLATE_X + x * PLATE_SCALE, y: PLATE_Y + y * PLATE_SCALE });
 
 export interface Assets { follower: HTMLImageElement; subscriber: HTMLImageElement; crow: HTMLImageElement }
