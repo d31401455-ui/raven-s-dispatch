@@ -66,8 +66,8 @@ function Overlay() {
       bc?.close();
       clearInterval(timer);
       player.destroy();
-      html.style.background = prev[0];
-      document.body.style.background = prev[1];
+      html.style.background = prev[0] ?? "";
+      document.body.style.background = prev[1] ?? "";
     };
   }, [s.user, s.type, s.msg, s.mute, s.volume, s.loop]);
 

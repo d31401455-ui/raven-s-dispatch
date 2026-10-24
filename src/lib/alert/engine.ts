@@ -73,7 +73,7 @@ function mulberry(seed: number) {
 interface Particle { x: number; y: number; vx: number; vy: number; life: number; max: number; kind: "spark" | "feather" | "dust"; rot: number; vr: number; size: number }
 interface Scratch { x1: number; y1: number; x2: number; y2: number; born: number }
 
-export interface AlertOptions { user: string; type: AlertType; message?: string }
+export interface AlertOptions { user: string; type: AlertType; message?: string | undefined }
 
 export class AlertScene {
   private parts: Particle[] = [];
@@ -286,7 +286,7 @@ export class AlertScene {
     const out = 1 - seg(t, 3.6, 5.4) * 0.75;
     ctx.save();
     for (let i = 0; i < this.mist.length; i++) {
-      const m = this.mist[i];
+      const m = this.mist[i]!;
       if (front !== (i % 3 === 0)) continue;
       m.x += m.vx * dt;
       const x = ((m.x % (CANVAS_W + 600)) + CANVAS_W + 600) % (CANVAS_W + 600) - 300;

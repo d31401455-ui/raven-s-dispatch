@@ -141,7 +141,7 @@ function Dashboard() {
             <Label htmlFor="user">Username</Label>
             <div className="flex gap-2">
               <Input id="user" value={user} maxLength={40} onChange={(e) => setUser(e.target.value)} />
-              <Button size="icon" variant="outline" title="Random name" onClick={() => setUser(LONG_NAMES[Math.floor(Math.random() * LONG_NAMES.length)])}><Shuffle className="h-4 w-4" /></Button>
+              <Button size="icon" variant="outline" title="Random name" onClick={() => setUser(LONG_NAMES[Math.floor(Math.random() * LONG_NAMES.length)] ?? "Poe")}><Shuffle className="h-4 w-4" /></Button>
             </div>
           </div>
           <div className="space-y-2">
@@ -157,7 +157,7 @@ function Dashboard() {
               <Label>Volume</Label>
               <Button size="icon" variant="ghost" onClick={() => setMuted((m) => !m)}>{muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}</Button>
             </div>
-            <Slider value={[volume * 100]} max={100} step={1} onValueChange={(v) => setVolume(v[0] / 100)} disabled={muted} />
+            <Slider value={[volume * 100]} max={100} step={1} onValueChange={(v) => setVolume((v[0] ?? 80) / 100)} disabled={muted} />
           </div>
 
           <div className="space-y-3 border-t border-border pt-5">
