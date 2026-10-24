@@ -141,9 +141,6 @@ export class AlertScene {
     const n = PLATES[this.opts.type].name;
     const p = P(n.x, n.y);
     const w = this.textCanvas.width, h = this.textCanvas.height;
-    ctxTextWidth: {
-      // actual text extents for the reveal edge
-    }
     return { x: p.x, y: p.y, w, h };
   }
 
